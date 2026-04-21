@@ -18,7 +18,7 @@ interface Props {
 
 /**
  * "Room Card" — a premium, 3D-tilting glass card that displays the 4-letter
- * room code. Moving the cursor across it subtly rotates the card on its
+ * room code. Moving the pointer across it subtly rotates the card on its
  * X/Y axes (mimicking CSS-3D perspective), and clicking the "Copy" button
  * emits a ripple of light from the click point while the label morphs
  * into a "Copied!" confirmation.
@@ -42,7 +42,7 @@ export function RoomCodeCard({ code, members, onCopy }: Props) {
     damping: 22,
   });
 
-  // Light-sheen tracking the cursor (composed into a single CSS string)
+  // Light-sheen tracking the pointer (composed into a single CSS string)
   const sheenX = useTransform(px, [0, 1], ["0%", "100%"]);
   const sheenY = useTransform(py, [0, 1], ["0%", "100%"]);
   const sheenBg = useMotionTemplate`radial-gradient(420px circle at ${sheenX} ${sheenY}, rgba(165,180,252,0.22), transparent 60%)`;
@@ -100,7 +100,7 @@ export function RoomCodeCard({ code, members, onCopy }: Props) {
         }}
         className="relative mx-auto w-full max-w-md rounded-3xl p-5 sm:p-6 md:p-7 glass-active overflow-hidden select-none"
       >
-        {/* Cursor-linked glossy sheen */}
+        {/* Pointer-linked glossy sheen */}
         <motion.div
           aria-hidden
           className="pointer-events-none absolute inset-0 rounded-3xl opacity-80"

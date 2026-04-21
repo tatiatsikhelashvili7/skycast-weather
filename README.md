@@ -187,7 +187,7 @@ cd client && npm run build && npm run preview
 SkyCast is designed to keep growing. Next in the pipeline:
 
 - **📈 Recharts-powered trend charts** — 7-day temperature / precipitation / UV lines with hover tooltips, replacing the current static forecast tabs. Dependency is already installed and ready to wire.
-- **🤖 Smart AI Advisor (clothing & activity recommendations)** — a rules engine (later OpenAI-powered) that turns the current conditions + next 6 hours into personalised advice: _"Light jacket + umbrella after 16:00"_, _"Perfect evening for a run"_, etc.
+- **🧥 Smart Outfit & Activity Advisor** — a lightweight rules engine that turns the current conditions + next 6 hours into personalised advice: _"Light jacket + umbrella after 16:00"_, _"Perfect evening for a run"_, etc.
 - **🌡️ Global Heatmaps** — an interactive world map overlay (temperature, precipitation, wind) driven by Open-Meteo's tile API.
 - **⌚ Apple Watch / Wear OS companion** — a lightweight glanceable complication showing current conditions + the next Time Machine hour.
 - **🔔 Real Push Notifications** — upgrade the current Socket.io alert broadcaster to VAPID-signed Web Push so alerts survive the browser being closed.
