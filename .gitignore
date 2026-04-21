@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Environment files (real secrets — commit only the .example template)
+.env
+.env.local
+.env.*.local
+
+# Local database (runtime data, not source)
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Caches
+.cache/
+.parcel-cache/
+.eslintcache
+coverage/
+.nyc_output/
+
+# Runtime misc
+pids/
+*.pid
+*.seed
+*.pid.lock
