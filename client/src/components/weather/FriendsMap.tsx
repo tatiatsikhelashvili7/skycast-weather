@@ -4,6 +4,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { FriendPin } from "../../hooks/useFriendsRoom";
 import { useReverseAddress } from "../../hooks/useReverseAddress";
+import { useDeviceTier } from "../../hooks/useDeviceTier";
 interface Props {
     pins: FriendPin[];
     selfId?: string | null;
@@ -223,6 +224,7 @@ function PinAddress({ pin }: {
     </div>);
 }
 function FriendsMapInner({ pins, selfId }: Props) {
+    const tier = useDeviceTier();
     const initialCenter = useMemo<[
         number,
         number
@@ -235,7 +237,16 @@ function FriendsMapInner({ pins, selfId }: Props) {
         return [20, 10];
     }, [pins, selfId]);
     return (<div className="relative h-80 md:h-[26rem] rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_25px_80px_-40px_rgba(34,211,238,0.35)]">
-      <MapContainer center={initialCenter} zoom={4} scrollWheelZoom worldCopyJump className="w-full h-full" zoomControl={false} attributionControl={false}>
+      <MapContainer
+        center={initialCenter}
+        zoom={4}
+        scrollWheelZoom={false}
+        worldCopyJump
+        className="w-full h-full"
+        zoomControl={!tier.isMobile}
+        attributionControl={false}
+        preferCanvas={tier.isMobile || tier.isLowEnd || tier.saveData}
+      >
         <TileLayer url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png" attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'/>
         <FitBounds pins={pins}/>
 

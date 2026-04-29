@@ -1,0 +1,22 @@
+name: Forbid "Made by Cursor"
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fail if "Made by Cursor" appears anywhere
+        shell: bash
+        run: |
+          set -euo pipefail
+          if rg -n -i 'made by cursor' .; then
+            echo
+            echo 'Found forbidden phrase: "Made by Cursor"'
+            exit 1
+          fi
