@@ -1,9 +1,13 @@
 # Dependencies
 node_modules/
+**/node_modules/
 
 # Build output
 dist/
 build/
+**/dist/
+**/build/
+**/.vite/
 *.tsbuildinfo
 
 # Environment files (real secrets — commit only the .example template)

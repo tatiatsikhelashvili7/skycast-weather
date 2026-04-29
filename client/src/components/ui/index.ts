@@ -1,11 +1,23 @@
-/**
- * Barrel export for the `/components/ui` primitives.
- *
- * These are the shared, zero-dependency building blocks that the rest of
- * the app composes into feature cards. Adding a new primitive? Export it
- * here so consumers can `import { X, Y } from "./components/ui"` without
- * reaching into individual files.
- */
-
 export { GlassCard } from "./GlassCard";
 export type { GlassTone, GlassRadius } from "./GlassCard";
+
+export { AlertToasts } from "./AlertToasts";
+export { AuthModal } from "./AuthModal";
+export { CityNotFoundToast } from "./CityNotFoundToast";
+export { ErrorBoundary } from "./ErrorBoundary";
+export { FavoritesDrawer } from "./FavoritesDrawer";
+export { GaugeRing } from "./GaugeRing";
+export { Header } from "./Header";
+export { LiveSourceChip } from "./LiveSourceChip";
+export { LoadingOverlay } from "./LoadingOverlay";
+export { LoadingSkeleton } from "./LoadingSkeleton";
+export { LocationPrompt } from "./LocationPrompt";
+export { Magnetic } from "./Magnetic";
+export { PerfHud } from "./PerfHud";
+export { RoomCodeCard } from "./RoomCodeCard";
+export { FadeOutOnScroll, SlideUpOnScroll } from "./ScrollLinked";
+export { SearchBar } from "./SearchBar";
+export { ServiceInterruption } from "./ServiceInterruption";
+export { StaggerStack } from "./StaggerStack";
+export { UnitToggle } from "./UnitToggle";
+export { WelcomeCard } from "./WelcomeCard";

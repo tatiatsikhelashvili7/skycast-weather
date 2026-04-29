@@ -20,4 +20,22 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    // Split the heaviest third-party libraries into their own chunks so
+    // repeat visitors hit cache for everything except our own code and
+    // the initial parse cost is spread across parallel HTTP requests.
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "react-vendor": ["react", "react-dom", "react-router-dom"],
+          motion: ["framer-motion"],
+          socket: ["socket.io-client"],
+          leaflet: ["leaflet", "react-leaflet"],
+        },
+      },
+    },
+    // Tighten the warning limit — our individual chunks should stay
+    // under 300 kB; anything larger deserves a second look.
+    chunkSizeWarningLimit: 300,
+  },
 });

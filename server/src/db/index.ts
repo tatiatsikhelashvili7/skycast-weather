@@ -1,12 +1,10 @@
 import Database from "better-sqlite3";
 import { config } from "../config";
-
 export const db = new Database(config.dbFile);
 db.pragma("journal_mode = WAL");
 db.pragma("foreign_keys = ON");
-
 export function initSchema(): void {
-  db.exec(`
+    db.exec(`
     CREATE TABLE IF NOT EXISTS users (
       id            INTEGER PRIMARY KEY AUTOINCREMENT,
       email         TEXT UNIQUE NOT NULL,
